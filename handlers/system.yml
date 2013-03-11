@@ -10,4 +10,4 @@
 
 ---
   - name: reboot system
-    command: /sbin/reboot -t now
+    command: /sbin/reboot -d 5
