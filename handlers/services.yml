@@ -1,0 +1,40 @@
+# This files contains handlers for Alpine Linux.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. License under CC BY 3.0
+# 
+# Usage:
+#  handlers:
+#    - include: files/services.yml
+
+---
+# Control handlers for sshd 
+  - name: start sshd
+    command: /etc/init.d/sshd start
+
+  - name: stop sshd
+    command: /etc/init.d/sshd stop
+
+  - name: restart sshd
+    command: /etc/init.d/sshd restart
+
+# Control handlers for lighttpd 
+  - name: start lighttpd
+    command: /etc/init.d/lighttpd start
+
+  - name: stop lighttpd
+    command: /etc/init.d/lighttpd stop
+
+  - name: restart lighttpd
+    command: /etc/init.d/lighttpd restart
+
+# Control handlers for mysql 
+  - name: start mysql
+    command: /etc/init.d/mysql start
+
+  - name: stop mysql
+    command: /etc/init.d/mysql stop
+
+  - name: restart mysql
+    command: /etc/init.d/mysql restart
