@@ -27,3 +27,7 @@
   - name: remove a package
     command: /sbin/apk del $del_pkg
     tags: del_pkg
+
+  - name: clean package cache
+    command: /sbin/apk cache clean
+    tags: clean_chache
