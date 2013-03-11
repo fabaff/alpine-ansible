@@ -9,7 +9,7 @@
     template: src=files/repositories.j2
               dest=/etc/apk/repositories
               owner=root
-              group=wheel
+              group=root
               mode=0644
               backup=yes
 
