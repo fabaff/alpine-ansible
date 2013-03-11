@@ -1,0 +1,13 @@
+# This playbook updates all Alpine Linux hosts.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+
+---
+  - name: update all packages
+    command: /sbin/apk upgrade -U -a
+
+  - name: reboot the system
+    command: /sbin/reboot -d 5
+
