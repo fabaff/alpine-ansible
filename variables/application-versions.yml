@@ -1,0 +1,16 @@
+# This variables files contains the version numbers of the software packages
+# which will be installed without the package management tool.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+---
+# linfo - http://linfo.sourceforge.net/
+linfo_version: 1.8.1
+
+# piwik - http://piwik.org/
+piwik_version: 1.11.1
+
+# phpsysinfo - http://rk4an.github.com/phpsysinfo/
+phpsysinfo_version: 3.1.2
