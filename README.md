@@ -31,7 +31,7 @@ At the moment the structure of the repository looks like this:
 ├── README.md ------- This files
 ├── tasks ----------- A collection of tasks
 ├── setup.yml ------- Collected tasks for a fresh installed system
-└── vars ------------ Storage files for variables
+└── variables ------- Storage files for variables
 ```
 
 ## Warning
