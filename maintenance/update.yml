@@ -10,4 +10,4 @@
 
   tasks:
   - name: update all packages
-    action: command /usr/sbin/apk upgrade -U -a
+    action: command /sbin/apk upgrade -U -a
