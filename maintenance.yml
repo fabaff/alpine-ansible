@@ -15,6 +15,7 @@
 # Package management tasks
 # Available tags: 
 #  update_cache
+#  clean_chache
 #  update
 #  local_cache (needs --extra-vars "path=/var/cache/apk")
 #  add_pkg (needs --extra-vars "add_pkg=Package name")
