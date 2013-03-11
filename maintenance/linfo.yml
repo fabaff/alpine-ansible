@@ -1,0 +1,50 @@
+# This playbook install the linfo (http://linfo.sourceforge.net/) php
+# application.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+---
+- hosts: all
+  user: root
+
+  vars:
+    release_version: 1.8.1
+
+  tasks:
+  - name: create a directory to store the data
+    file: path=/usr/share/webapps/
+          owner=root
+          group=root
+          mode=0777
+          state=directory
+
+  - name: download the linfo source tarball
+    get_url: url=http://sourceforge.net/projects/linfo/files/Linfo%20Stable%20Releases/linfo-$release_version.tar.gz
+             dest=/usr/share/webapps/linfo-$release_version.tar.gz
+             mode=0440
+
+  - name: unpack the source tarball
+    command: /bin/tar -xzf /usr/share/webapps/linfo-$release_version.tar.gz -C /usr/share/webapps/
+
+  - name: rename the source directory
+    command: /bin/mv /usr/share/webapps/linfo-$release_version /usr/share/webapps/linfo
+
+  - name: delete the source tarball
+    command: /bin/rm /usr/share/webapps/linfo-$release_version.tar.gz
+
+  - name: copy the default config file
+    command: /bin/cp /usr/share/webapps/linfo/sample.config.inc.php /usr/share/webapps/linfo/config.inc.php
+
+  - name: set the permissions
+    file: path=/usr/share/webapps/
+          mode=0777
+          state=directory
+
+  - name: create a symlink to the webserver root
+    file: src=/usr/share/webapps/linfo/
+          dest=/var/www/localhost/htdocs/linfo
+          owner=root
+          group=root
+          state=link
