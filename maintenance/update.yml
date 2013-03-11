@@ -1,4 +1,4 @@
-# This playbook updates all Alpine Linux hosts.
+# This playbook updates all Alpine Linux hosts and initialize a reboot.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
@@ -10,4 +10,7 @@
 
   tasks:
   - name: update all packages
-    action: command /sbin/apk upgrade -U -a
+    command: /sbin/apk upgrade -U -a
+
+  - name: reboot system
+    command: /sbin/reboot -d 5
