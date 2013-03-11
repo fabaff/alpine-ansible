@@ -10,10 +10,14 @@
 ---
 - hosts: all
   user: root
+  vars_files:
+    - vars/application-versions.yml
 
   tasks:
-    - include: tasks/apk-repositories.yml
-    - include: tasks/motd.yml
+#    - include: tasks/apk-repositories.yml
+#    - include: tasks/motd.yml
+#    - include: tasks/lighttpd.yml
+#    - include: tasks/linfo.yml
 
   handlers:
    - include: handlers/system.yml
