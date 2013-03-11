@@ -1,0 +1,13 @@
+# This files contains system handlers for Alpine Linux.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+# 
+# Usage:
+#  handlers:
+#    - include: files/system.yml
+
+---
+  - name: reboot system
+    command: /sbin/reboot -t now
