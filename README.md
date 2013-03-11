@@ -31,6 +31,11 @@ At the moment the structure of the repository looks like this:
 └── vars ------ Storage files for variables
 ```
 
+## Warning
+*Think first* before you implement stuff from this repository. Consider the 
+playbooks in this repository as a show case. Somethings doesn't make sense, are
+nasty hacks, or easier to do with another approach. 
+
 ## Licensing
 
 Examples and modules should be licensed GPLv3 per the rest of Ansible, to
