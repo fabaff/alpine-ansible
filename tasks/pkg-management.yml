@@ -1,4 +1,4 @@
-# This playbook contains operations to perform package management task on
+# This playbook contains operations to perform package management tasks on
 # Alpine Linux hosts.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
