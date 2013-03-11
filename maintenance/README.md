@@ -15,3 +15,12 @@ The cache directory is storing all versions of a package. Over time the cache is
 because newer packages will replace older ones. This playbook is cleaning the cache.
 
 For additional details please refer to this [section](http://wiki.alpinelinux.org/wiki/Alpine_Linux_package_management#Delete_old_packages) in the Alpine Linux wiki.
+
+## lighttpd.yml
+The *lighttpd.yml* playbook installs the [lighttpd](http://www.lighttpd.net/) 
+web server with [FastCGI](www.fastcgi.com/) support and PHP.
+
+## linfo.yml
+[Linfo](http://linfo.sourceforge.net/) is a simple PHP application that
+displays information about the host it's running on. A running lighttpd server
+is needed. This means, run the **lighttpd.yml** first.
