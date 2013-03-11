@@ -23,12 +23,15 @@ At the moment the structure of the repository looks like this:
 
 ```bash
 .
-├── files ----- Template file
-├── handlers -- Handlers for Alpien Linux services
-├── modules --- Modules especially for Alpine Linux
-├── README.md - This file
-├── tasks ----- A collection of task
-└── vars ------ Storage files for variables
+├── files ----------- Template files
+├── handlers -------- Handlers for Alpien Linux services
+├── maintenance ----- Complete playbooks
+├── maintenance.yml - Regular tasks to perform on a running system
+├── modules --------- Modules especially for Alpine Linux
+├── README.md ------- This files
+├── tasks ----------- A collection of tasks
+├── setup.yml ------- Collected tasks for a fresh installed system
+└── vars ------------ Storage files for variables
 ```
 
 ## Warning
