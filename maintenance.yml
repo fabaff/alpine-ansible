@@ -1,0 +1,25 @@
+# This playbook contains example maintenance tasks which could be performed 
+# on a running Alpine Linux system. 
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+# Usage: ansible-playbook maintenance.yml -f 10
+#        sudo ansible-playbook maintenance.yml --tags "update"
+---
+- hosts: all
+  user: root
+  tasks:
+
+# Package management tasks
+# Available tags: 
+#  update_cache
+#  update
+#  local_cache (needs --extra-vars "path=/var/cache/apk")
+#  add_pkg (needs --extra-vars "add_pkg=Package name")
+#  del_pkg (needs --extra-vars ""del_pkg=Package name")
+  - include: tasks/pkg-management.yml
+
+  handlers:
+   - include: handlers/system.yml
