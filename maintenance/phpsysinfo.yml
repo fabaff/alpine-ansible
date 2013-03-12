@@ -1,0 +1,50 @@
+# This playbook install the PhpSysInfo (http://rk4an.github.com/phpsysinfo/) 
+# php application.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+---
+- hosts: all
+  user: root
+
+  vars:
+    release_version: 3.1.2
+
+  tasks:
+  - name: create the 'webapps' directory
+    file: path=/usr/share/webapps/
+          owner=root
+          group=root
+          mode=0777
+          state=directory
+
+  - name: download the phpsysinfo source tarball
+    get_url: url=https://github.com/rk4an/phpsysinfo/archive/v$release_version.tar.gz
+             dest=/usr/share/webapps/phpsysinfo-$release_version.tar.gz
+             mode=0440
+
+  - name: unpack the source tarball
+    command: /bin/tar -xzf /usr/share/webapps/phpsysinfo-$release_version.tar.gz -C /usr/share/webapps/
+
+  - name: rename the source directory
+    command: /bin/mv /usr/share/webapps/phpsysinfo-$release_version /usr/share/webapps/phpsysinfo
+
+  - name: delete the source tarball
+    command: /bin/rm /usr/share/webapps/phpsysinfo-$release_version.tar.gz
+
+  - name: copy the default config file
+    command: /bin/cp /usr/share/webapps/phpsysinfo/phpsysinfo.ini.new /usr/share/webapps/phpsysinfo/phpsysinfo.ini
+
+  - name: set the permissions
+    file: path=/usr/share/webapps/
+          mode=0777
+          state=directory
+
+  - name: create a symlink to the webserver root
+    file: src=/usr/share/webapps/phpsysinfo/
+          dest=/var/www/localhost/htdocs/phpsysinfo
+          owner=root
+          group=root
+          state=link
