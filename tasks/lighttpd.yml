@@ -36,7 +36,7 @@
                 insertafter='^#   include "mod_fastcgi.conf"'
                 line='   include "mod_fastcgi.conf"'
                 state=present
-                 
+
   - name: start the lighttpd service
     command: /etc/init.d/lighttpd start
 
