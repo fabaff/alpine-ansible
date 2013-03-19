@@ -1,4 +1,5 @@
-# This playbook install the bootstrap javascript framework.
+# This playbook install the bootstrap (http://twitter.github.com/bootstrap/)
+# javascript framework.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
