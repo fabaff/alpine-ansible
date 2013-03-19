@@ -18,10 +18,10 @@
              mode=0440
 
   - name: unpack the archive
-    action: command /usr/bin/unzip -o /usr/share/webapps/bootstrap.zip -d /usr/share/webapps/
+    command: /usr/bin/unzip -o /usr/share/webapps/bootstrap.zip -d /usr/share/webapps/
 
   - name: delete the archive
-    action: command /bin/rm /usr/share/webapps/bootstrap.zip
+    command: /bin/rm /usr/share/webapps/bootstrap.zip
 
   - name: set the right permission
     file: path=/usr/share/webapps/
@@ -42,4 +42,3 @@
               group=root
               mode=0755
               backup=yes
-
