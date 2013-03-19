@@ -1,0 +1,37 @@
+# This playbook install the NOWASP (Mutillidae) web penetration test 
+# application (http://sourceforge.net/projects/mutillidae/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+---
+  - name: create the 'webapps' directory
+    file: path=/usr/share/webapps/
+          owner=root
+          group=root
+          mode=0777
+          state=directory
+
+  - name: downloads the bootstrap zip archive
+    get_url: url=http://sourceforge.net/projects/mutillidae/files/mutillidae-project/LATEST-mutillidae-$mutillidae_version.zip
+             dest=/usr/share/webapps/mutillidae-$mutillidae_version.zip
+             mode=0440
+
+  - name: unpack the archive
+    action: command /usr/bin/unzip -o /usr/share/webapps/mutillidae-$mutillidae_version -d /usr/share/webapps/
+
+  - name: delete the archive
+    action: command /bin/rm /usr/share/webapps/mutillidae-$mutillidae_version.zip
+
+  - name: set the right permission
+    file: path=/usr/share/webapps/
+          mode=0777
+          state=directory
+
+  - name: create a symlink to the webserver root
+    file: src=/usr/share/webapps/mutillidae/
+          dest=/var/www/localhost/htdocs/mutillidae
+          owner=root
+          group=root
+          state=link
