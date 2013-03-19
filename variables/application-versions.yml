@@ -17,3 +17,6 @@ phpsysinfo_version: 3.1.2
 
 # phpshell - http://phpshell.sourceforge.net/
 phpshell_version: 2.4
+
+# NOWASP (Mutillidae) - http://sourceforge.net/projects/mutillidae/
+mutillidae_version: 2.4.8
