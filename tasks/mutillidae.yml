@@ -19,10 +19,10 @@
              mode=0440
 
   - name: unpack the archive
-    action: command /usr/bin/unzip -o /usr/share/webapps/mutillidae-$mutillidae_version -d /usr/share/webapps/
+    command: /usr/bin/unzip -o /usr/share/webapps/mutillidae-$mutillidae_version -d /usr/share/webapps/
 
   - name: delete the archive
-    action: command /bin/rm /usr/share/webapps/mutillidae-$mutillidae_version.zip
+    command: /bin/rm /usr/share/webapps/mutillidae-$mutillidae_version.zip
 
   - name: set the right permission
     file: path=/usr/share/webapps/
