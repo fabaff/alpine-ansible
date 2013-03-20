@@ -13,7 +13,7 @@
           mode=0777
           state=directory
 
-  - name: downloads the bootstrap zip archive
+  - name: downloads the archive
     get_url: url=http://sourceforge.net/projects/mutillidae/files/mutillidae-project/LATEST-mutillidae-$mutillidae_version.zip
              dest=/usr/share/webapps/mutillidae-$mutillidae_version.zip
              mode=0440
