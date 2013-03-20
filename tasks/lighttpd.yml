@@ -1,4 +1,4 @@
-# This playbook install the lighttpd with FastCGI and PHP
+# This playbook install the lighttpd with FastCGI and PHP.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
@@ -37,8 +37,7 @@
                 line='   include "mod_fastcgi.conf"'
                 state=present
 
-  - name: start the lighttpd service
-    command: /etc/init.d/lighttpd start
+    notify: start lighttpd
 
   - name: add lighttpd to the default runlevel
     command: rc-update add lighttpd default
