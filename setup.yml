@@ -11,13 +11,26 @@
 - hosts: all
   user: root
   vars_files:
-    - vars/application-versions.yml
+    - variables/application-versions.yml
 
   tasks:
 #    - include: tasks/apk-repositories.yml
 #    - include: tasks/motd.yml
+
+# Server tasks
 #    - include: tasks/lighttpd.yml
+#    - include: tasks/dovecot.yml
+#    - include: tasks/collectd.yml
+    - include: tasks/dnsmasq.yml
+
+# Web application tasks
 #    - include: tasks/linfo.yml
+#    - include: tasks/bootstrap.yml
+
+
+
+#    - include: tasks/.yml
+
 
   handlers:
    - include: handlers/system.yml
