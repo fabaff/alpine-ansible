@@ -23,3 +23,6 @@ mutillidae_version: 2.4.8
 
 # Damn Vulnerable Web App (DVWA) - http://www.dvwa.co.uk/
 dvwa_version: 1.0.7
+
+# phpMyAdmin- http://www.phpmyadmin.net/
+phpmyadmin_version: 3.5.7
