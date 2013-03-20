@@ -26,9 +26,6 @@
   - name: delete the source tarball
     command: /bin/rm /usr/share/webapps/phpshell-$phpshell_version.tar.gz
 
-#  - name: copy the default config file
-#    command: /bin/cp /usr/share/webapps/linfo/sample.config.inc.php /usr/share/webapps/linfo/config.inc.php
-
   - name: set the permissions
     file: path=/usr/share/webapps/
           mode=0777
