@@ -1,4 +1,4 @@
-# This files contains handlers for Alpine Linux.
+# This files contains service handlers for Alpine Linux.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
@@ -6,7 +6,7 @@
 # 
 # Usage:
 #  handlers:
-#    - include: files/services.yml
+#    - include: handlers/services.yml
 
 ---
 # Control handlers for sshd 
@@ -38,3 +38,23 @@
 
   - name: restart mysql
     command: /etc/init.d/mysql restart
+
+# Control handlers for collectd 
+  - name: start collectd
+    command: /etc/init.d/collectd start
+
+  - name: stop collectd
+    command: /etc/init.d/collectd stop
+
+  - name: restart collectd
+    command: /etc/init.d/collectd restart
+
+# Control handlers for dnsmasq 
+  - name: start dnsmasq
+    command: /etc/init.d/dnsmasq start
+
+  - name: stop dnsmasq
+    command: /etc/init.d/dnsmasq stop
+
+  - name: restart dnsmasq
+    command: /etc/init.d/dnsmasq restart
