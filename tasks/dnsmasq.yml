@@ -1,0 +1,24 @@
+# This playbook install the dnsmasq (http://www.thekelleys.org.uk/dnsmasq/doc.html)
+# DNS forwarder and DHCP server.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+---
+  - name: install the dnsmasq server
+    command: /sbin/apk add dnsmasq
+
+  - name: install a default configuration file
+    template: src=files/dnsmasq.j2
+              dest=/etc/dnsmasq.conf
+              owner=root
+              group=root
+              mode=0755
+              backup=yes
+    notify: 
+        - start dnsmasq
+
+  - name: add dnsmasq to the default runlevel
+    command: rc-update add dnsmasq default
+
