@@ -1,4 +1,5 @@
-# This variables file contains the default password for the user accounts.
+# This variables file contains the default password for system, user, and
+# database accounts.
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
@@ -15,3 +16,6 @@ client_root_password:
 
 # Default user password
 default_user_password: 
+
+# Default mysql password
+default_mysql_password: 
