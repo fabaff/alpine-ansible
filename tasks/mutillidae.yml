@@ -24,6 +24,9 @@
   - name: delete the archive
     command: /bin/rm /usr/share/webapps/mutillidae-$mutillidae_version.zip
 
+  - name: set the default mysql password
+    command: sed -i 's|MySQLDatabasePassword = ""|MySQLDatabasePassword = "$default_mysql_password"|g' /usr/share/webapps/mutillidae/classes/MySQLHandler.php
+
   - name: set the right permission
     file: path=/usr/share/webapps/
           mode=0777
