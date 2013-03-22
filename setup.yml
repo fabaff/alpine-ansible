@@ -12,6 +12,7 @@
   user: root
   vars_files:
     - variables/application-versions.yml
+    - variables/sensitive-variables.yml
 
   tasks:
 #    - include: tasks/apk-repositories.yml
@@ -21,16 +22,18 @@
 #    - include: tasks/lighttpd.yml
 #    - include: tasks/dovecot.yml
 #    - include: tasks/collectd.yml
-    - include: tasks/dnsmasq.yml
+#    - include: tasks/dnsmasq.yml
+#    - include: tasks/mysql.yml
 
 # Web application tasks
 #    - include: tasks/linfo.yml
 #    - include: tasks/bootstrap.yml
-
-
-
-#    - include: tasks/.yml
-
+#    - include: tasks/phpsysinfo.yml
+    - include: tasks/mutillidae.yml
+#    - include: tasks/php-shell-detector.yml
+#    - include: tasks/dvwa.yml
+#    - include: tasks/phpmyadmin.yml
+#
 
   handlers:
    - include: handlers/system.yml
