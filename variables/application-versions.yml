@@ -26,3 +26,6 @@ dvwa_version: 1.0.7
 
 # phpMyAdmin- http://www.phpmyadmin.net/
 phpmyadmin_version: 3.5.7
+
+# bWAPP - http://sourceforge.net/projects/bwapp/
+bwapp_version: 1.3
