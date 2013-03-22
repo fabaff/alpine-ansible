@@ -30,6 +30,14 @@
           mode=0777
           state=directory
 
+  - name: install a default configuration file
+    template: src=files/dvwa.j2
+              dest=/usr/share/webapps/dvwa/config/config.inc.php
+              owner=root
+              group=root
+              mode=0755
+              backup=yes
+
   - name: create a symlink to the webserver root
     file: src=/usr/share/webapps/dvwa/
           dest=/var/www/localhost/htdocs/dvwa
