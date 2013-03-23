@@ -24,7 +24,7 @@ At the moment the structure of the repository looks like this:
 ```bash
 .
 ├── files ----------- Template files
-├── handlers -------- Handlers for Alpien Linux services
+├── handlers -------- Handlers for Alpine Linux services
 ├── maintenance ----- Complete playbooks
 ├── maintenance.yml - Regular tasks to perform on a running system
 ├── modules --------- Modules especially for Alpine Linux
