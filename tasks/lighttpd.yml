@@ -37,10 +37,14 @@
                 line='   include "mod_fastcgi.conf"'
                 state=present
 
-    notify: start lighttpd
+#    notify:
+#      - start lighttpd
+
+  - name: start lighttpd
+    command: /etc/init.d/lighttpd start
 
   - name: add lighttpd to the default runlevel
-    command: rc-update add lighttpd default
+    command: /sbin/rc-update add lighttpd default
 
   - name: install a default index.html file
     template: src=files/lighttpd.j2 
