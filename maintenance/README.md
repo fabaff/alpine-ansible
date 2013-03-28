@@ -24,3 +24,9 @@ web server with [FastCGI](www.fastcgi.com/) support and PHP.
 [Linfo](http://linfo.sourceforge.net/) is a simple PHP application that
 displays information about the host it's running on. A running lighttpd server
 is needed. This means, run the **lighttpd.yml** first.
+
+## phpsysinfo.yml
+[PhpSysInfo](http://rk4an.github.com/phpsysinfo/) displays various operating
+system details like CPU, memory, disk, and network usage. As well are SMART
+data, temperatures, and rpm of fans shown. Running the **lighttpd.yml** first
+is mandatory because a running lighttpd server is needed.
