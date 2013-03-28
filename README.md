@@ -4,7 +4,7 @@ This repository contains user-contributed real world examples for Ansible
 playbooks, especially for Alpine Linux, as well as modules that are not a part
 of Ansible's core distribution.
 
-This is designed to be a resource to folks learning configuraing Alpine Linux
+This is designed to be a resource to folks learning configuring Alpine Linux
 with Ansible, as well as a way to share useful resources of all kinds.
 
 If you have just found Ansible or Alpine Linux, you should start here:
