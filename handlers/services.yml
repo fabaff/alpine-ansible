@@ -2,7 +2,7 @@
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
+# Licensed under CC BY 3.0. All rights reserved.
 # 
 # Usage:
 #  handlers:
@@ -10,51 +10,51 @@
 
 ---
 # Control handlers for sshd 
-  - name: start sshd
-    command: /etc/init.d/sshd start
+- name: start sshd
+  command: /etc/init.d/sshd start
 
-  - name: stop sshd
-    command: /etc/init.d/sshd stop
+- name: stop sshd
+  command: /etc/init.d/sshd stop
 
-  - name: restart sshd
-    command: /etc/init.d/sshd restart
+- name: restart sshd
+  command: /etc/init.d/sshd restart
 
 # Control handlers for lighttpd 
-  - name: start lighttpd
-    command: /etc/init.d/lighttpd start
+- name: start lighttpd
+  command: /etc/init.d/lighttpd start
 
-  - name: stop lighttpd
-    command: /etc/init.d/lighttpd stop
+- name: stop lighttpd
+  command: /etc/init.d/lighttpd stop
 
-  - name: restart lighttpd
-    command: /etc/init.d/lighttpd restart
+- name: restart lighttpd
+  command: /etc/init.d/lighttpd restart
 
 # Control handlers for mysql 
-  - name: start mysql
-    command: /etc/init.d/mysql start
+- name: start mysql
+  command: /etc/init.d/mysql start
 
-  - name: stop mysql
-    command: /etc/init.d/mysql stop
+- name: stop mysql
+  command: /etc/init.d/mysql stop
 
-  - name: restart mysql
-    command: /etc/init.d/mysql restart
+- name: restart mysql
+  command: /etc/init.d/mysql restart
 
 # Control handlers for collectd 
-  - name: start collectd
-    command: /etc/init.d/collectd start
+- name: start collectd
+  command: /etc/init.d/collectd start
 
-  - name: stop collectd
-    command: /etc/init.d/collectd stop
+- name: stop collectd
+  command: /etc/init.d/collectd stop
 
-  - name: restart collectd
-    command: /etc/init.d/collectd restart
+- name: restart collectd
+  command: /etc/init.d/collectd restart
 
 # Control handlers for dnsmasq 
-  - name: start dnsmasq
-    command: /etc/init.d/dnsmasq start
+- name: start dnsmasq
+  command: /etc/init.d/dnsmasq start
 
-  - name: stop dnsmasq
-    command: /etc/init.d/dnsmasq stop
+- name: stop dnsmasq
+  command: /etc/init.d/dnsmasq stop
 
-  - name: restart dnsmasq
-    command: /etc/init.d/dnsmasq restart
+- name: restart dnsmasq
+  command: /etc/init.d/dnsmasq restart
