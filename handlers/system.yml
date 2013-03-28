@@ -9,5 +9,5 @@
 #    - include: files/system.yml
 
 ---
-  - name: reboot system
-    command: /sbin/reboot -d 5
+- name: reboot system
+  command: /sbin/reboot
