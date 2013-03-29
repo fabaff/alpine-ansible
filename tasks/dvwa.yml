@@ -1,46 +1,51 @@
 # This playbook install the Damn Vulnerable Web Application (DVWA) 
 # (http://www.dvwa.co.uk/).
-
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
+# Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-  - name: create the 'webapps' directory
-    file: path=/usr/share/webapps/
-          owner=root
-          group=root
-          mode=0777
-          state=directory
+- name: install unzip packages
+  command: /sbin/apk add unzip
 
-  - name: downloads the archive
-    get_url: url=http://dvwa.googlecode.com/files/DVWA-$dvwa_version.zip
-             dest=/usr/share/webapps/dvwa-$dvwa_version.zip
-             mode=0440
+- name: create the 'webapps' directory
+  file: path=/usr/share/webapps/
+        owner=root
+        group=root
+        mode=0777
+        state=directory
 
-  - name: unpack the archive
-    command: /usr/bin/unzip -o /usr/share/webapps/dvwa-$dvwa_version.zip -d /usr/share/webapps/
+- name: downloads the archive
+  get_url: url=http://dvwa.googlecode.com/files/DVWA-$dvwa_version.zip
+           dest=/usr/share/webapps/dvwa-$dvwa_version.zip
+           mode=0440
 
-  - name: delete the archive
-    command: /bin/rm /usr/share/webapps/dvwa-$dvwa_version.zip
+- name: unpack the archive
+  command: /usr/bin/unzip -o /usr/share/webapps/dvwa-$dvwa_version.zip -d /usr/share/webapps/
 
-  - name: set the permissions
-    file: path=/usr/share/webapps/
-          mode=0777
-          state=directory
+- name: delete the archive
+  command: /bin/rm /usr/share/webapps/dvwa-$dvwa_version.zip
 
-  - name: install a default configuration file
-    template: src=files/dvwa.j2
-              dest=/usr/share/webapps/dvwa/config/config.inc.php
-              owner=root
-              group=root
-              mode=0755
-              backup=yes
+- name: set the permissions
+  file: path=/usr/share/webapps/
+        mode=0777
+        state=directory
 
-  - name: create a symlink to the webserver root
-    file: src=/usr/share/webapps/dvwa/
-          dest=/var/www/localhost/htdocs/dvwa
-          owner=root
-          group=root
-          state=link
+- name: install a default configuration file
+  template: src=files/dvwa.j2
+            dest=/usr/share/webapps/dvwa/config/config.inc.php
+            owner=root
+            group=root
+            mode=0755
+            backup=yes
+
+- name: create a symlink to the webserver root
+  file: src=/usr/share/webapps/dvwa/
+        dest=/var/www/localhost/htdocs/dvwa
+        owner=root
+        group=root
+        state=link
+
+- name: remove unzip package
+  command: /sbin/apk del unzip
