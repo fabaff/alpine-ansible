@@ -3,36 +3,39 @@
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
+# Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-  - name: create the 'webapps' directory
-    file: path=/usr/share/webapps/
-          owner=root
-          group=root
-          mode=0777
-          state=directory
+- name: create the 'webapps' directory
+  file: path=/usr/share/webapps/
+        owner=root
+        group=root
+        mode=0777
+        state=directory
 
-  - name: for the git module git is needed
-    command: /sbin/apk add git
+- name: for the git module git is needed
+  command: /sbin/apk add git
 
-  - name: delete a previous checkout
-    file: path=/usr/share/webapps/sqlol state=absent
+- name: delete a previous checkout
+  file: path=/usr/share/webapps/sqlol state=absent
 
-  - name: checkout the source
-    command: /usr/bin/git clone git://github.com/SpiderLabs/SQLol.git /usr/share/webapps/sqlol
+- name: checkout the source
+  command: /usr/bin/git clone git://github.com/SpiderLabs/SQLol.git /usr/share/webapps/sqlol
 
-  - name: set the default mysql password
-    command: sed -i "s|$password = ''|$password = '$default_mysql_password'|g" /usr/share/webapps/sqlol/includes/database.config.php
+- name: set the default mysql password
+  command: sed -i "s|$password = ''|$password = '$default_mysql_password'|g" /usr/share/webapps/sqlol/includes/database.config.php
 
-  - name: set the right permission
-    file: path=/usr/share/webapps/
-          mode=0777
-          state=directory
+- name: set the right permission
+  file: path=/usr/share/webapps/
+        mode=0777
+        state=directory
 
-  - name: create a symlink to the webserver root
-    file: src=/usr/share/webapps/sqlol/
-          dest=/var/www/localhost/htdocs/sqlol
-          owner=root
-          group=root
-          state=link
+- name: create a symlink to the webserver root
+  file: src=/usr/share/webapps/sqlol/
+        dest=/var/www/localhost/htdocs/sqlol
+        owner=root
+        group=root
+        state=link
+
+- name: remove git
+  command: /sbin/apk del git
