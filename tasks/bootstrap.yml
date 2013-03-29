@@ -3,43 +3,43 @@
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
+# Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-  - name: create the 'webapps' directory
-    file: path=/usr/share/webapps/
-          owner=root
-          group=root
-          mode=0777
-          state=directory
+- name: create the 'webapps' directory
+  file: path=/usr/share/webapps/
+        owner=root
+        group=root
+        mode=0777
+        state=directory
 
-  - name: downloads the bootstrap zip archive
-    get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
-             dest=/usr/share/webapps/bootstrap.zip
-             mode=0440
+- name: downloads the bootstrap zip archive
+  get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
+           dest=/usr/share/webapps/bootstrap.zip
+           mode=0440
 
-  - name: unpack the archive
-    command: /usr/bin/unzip -o /usr/share/webapps/bootstrap.zip -d /usr/share/webapps/
+- name: unpack the archive
+  command: /usr/bin/unzip -o /usr/share/webapps/bootstrap.zip -d /usr/share/webapps/
 
-  - name: delete the archive
-    command: /bin/rm /usr/share/webapps/bootstrap.zip
+- name: delete the archive
+  command: /bin/rm /usr/share/webapps/bootstrap.zip
 
-  - name: set the right permission
-    file: path=/usr/share/webapps/
-          mode=0777
-          state=directory
+- name: set the right permission
+  file: path=/usr/share/webapps/
+        mode=0777
+        state=directory
 
-  - name: create a symlink to the webserver root
-    file: src=/usr/share/webapps/bootstrap/
-          dest=/var/www/localhost/htdocs/bootstrap
-          owner=root
-          group=root
-          state=link
+- name: create a symlink to the webserver root
+  file: src=/usr/share/webapps/bootstrap/
+        dest=/var/www/localhost/htdocs/bootstrap
+        owner=root
+        group=root
+        state=link
 
-  - name: install a default index.html file
-    template: src=files/bootstrap.j2
-              dest=/var/www/localhost/htdocs/index.html 
-              owner=root
-              group=root
-              mode=0755
-              backup=yes
+- name: install a default index.html file
+  template: src=files/bootstrap.j2
+            dest=/var/www/localhost/htdocs/index.html 
+            owner=root
+            group=root
+            mode=0755
+            backup=yes
