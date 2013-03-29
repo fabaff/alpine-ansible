@@ -3,31 +3,31 @@
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
-
+# Licensed under CC BY 3.0. All rights reserved.
+# 
 ---
-  - name: update the package list
-    command: /sbin/apk update
-    tags: update_cache
+- name: update the package list
+  command: /sbin/apk update
+  tags: update_cache
 
-  - name: update all packages
-    command: /sbin/apk upgrade -U -a
-    tags: update
-    notify:
-      - reboot system
+- name: update all packages
+  command: /sbin/apk upgrade -U -a
+  tags: update
+  notify:
+    - reboot system
 
-  - name: enable local cache
-    command: /sbin/setup-apkcache $path
-    tags: local_cache
+- name: enable local cache
+  command: /sbin/setup-apkcache $path
+  tags: local_cache
 
-  - name: install a package
-    command: /sbin/apk add $add_pkg
-    tags: add_pkg
+- name: install a package
+  command: /sbin/apk add $add_pkg
+  tags: add_pkg
 
-  - name: remove a package
-    command: /sbin/apk del $del_pkg
-    tags: del_pkg
+- name: remove a package
+  command: /sbin/apk del $del_pkg
+  tags: del_pkg
 
-  - name: clean package cache
-    command: /sbin/apk cache clean
-    tags: clean_chache
+- name: clean package cache
+  command: /sbin/apk cache clean
+  tags: clean_chache
