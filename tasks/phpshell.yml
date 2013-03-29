@@ -2,38 +2,38 @@
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
+# Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-  - name: create the 'webapps' directory
-    file: path=/usr/share/webapps/
-          owner=root
-          group=root
-          mode=0777
-          state=directory
+- name: create the 'webapps' directory
+  file: path=/usr/share/webapps/
+        owner=root
+        group=root
+        mode=0777
+        state=directory
 
-  - name: download the linfo source tarball
-    get_url: url=http://prdownloads.sourceforge.net/phpshell/phpshell-$phpshell_version.tar.gz
-             dest=/usr/share/webapps/phpshell-$phpshell_version.tar.gz
-             mode=0440
+- name: download the linfo source tarball
+  get_url: url=http://prdownloads.sourceforge.net/phpshell/phpshell-$phpshell_version.tar.gz
+           dest=/usr/share/webapps/phpshell-$phpshell_version.tar.gz
+           mode=0440
 
-  - name: unpack the source tarball
-    command: /bin/tar -xzf /usr/share/webapps/phpshell-$phpshell_version.tar.gz -C /usr/share/webapps/
+- name: unpack the source tarball
+  command: /bin/tar -xzf /usr/share/webapps/phpshell-$phpshell_version.tar.gz -C /usr/share/webapps/
 
-  - name: rename the source directory
-    command: /bin/mv /usr/share/webapps/phpshell-$phpshell_version /usr/share/webapps/phpshell
+- name: rename the source directory
+  command: /bin/mv /usr/share/webapps/phpshell-$phpshell_version /usr/share/webapps/phpshell
 
-  - name: delete the source tarball
-    command: /bin/rm /usr/share/webapps/phpshell-$phpshell_version.tar.gz
+- name: delete the source tarball
+  command: /bin/rm /usr/share/webapps/phpshell-$phpshell_version.tar.gz
 
-  - name: set the permissions
-    file: path=/usr/share/webapps/
-          mode=0777
-          state=directory
+- name: set the permissions
+  file: path=/usr/share/webapps/
+        mode=0777
+        state=directory
 
-  - name: create a symlink to the webserver root
-    file: src=/usr/share/webapps/phpshell/
-          dest=/var/www/localhost/htdocs/phpshell
-          owner=root
-          group=root
-          state=link
+- name: create a symlink to the webserver root
+  file: src=/usr/share/webapps/phpshell/
+        dest=/var/www/localhost/htdocs/phpshell
+        owner=root
+        group=root
+        state=link
