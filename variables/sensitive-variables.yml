@@ -3,19 +3,19 @@
 #
 # Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
 #
-# All rights reserved. Licensed under CC BY 3.0
+# Licensed under CC BY 3.0. All rights reserved.
 #
 # For the Ansible examples:
 # python -c 'import crypt; print crypt.crypt("Password", "$1$SomeSalt$")'
 ---
 # Server root password
-server_root_password: 
+server_root_password: password
 
 # Client root password
-client_root_password: 
+client_root_password: password
 
 # Default user password
-default_user_password: 
+default_user_password: password
 
 # Default mysql password
-default_mysql_password: 
+default_mysql_password: password
