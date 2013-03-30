@@ -23,7 +23,7 @@
   command: /usr/bin/git clone git://github.com/SpiderLabs/SQLol.git /usr/share/webapps/sqlol
 
 - name: set the default mysql password
-  command: sed -i "s|$password = ''|$password = '$default_mysql_password'|g" /usr/share/webapps/sqlol/includes/database.config.php
+  command: /bin/sed -i "s|$password = ''|$password = '$default_mysql_password'|g" /usr/share/webapps/sqlol/includes/database.config.php
 
 - name: set the right permission
   file: path=/usr/share/webapps/
