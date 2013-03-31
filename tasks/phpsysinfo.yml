@@ -24,8 +24,9 @@
 - name: rename the source directory
   command: /bin/mv /usr/share/webapps/phpsysinfo-$phpsysinfo_version /usr/share/webapps/phpsysinfo
 
-- name: delete the source tarball
-  command: /bin/rm /usr/share/webapps/phpsysinfo-$phpsysinfo_version.tar.gz
+- name: delete the archive
+  file: path=/usr/share/webapps/phpsysinfo-$phpsysinfo_version.tar.gz
+        state=absent
 
 - name: copy the default config file
   command: /bin/cp /usr/share/webapps/phpsysinfo/phpsysinfo.ini.new /usr/share/webapps/phpsysinfo/phpsysinfo.ini
