@@ -22,7 +22,8 @@
   command: /usr/bin/unzip -o /usr/share/webapps/bootstrap.zip -d /usr/share/webapps/
 
 - name: delete the archive
-  command: /bin/rm /usr/share/webapps/bootstrap.zip
+  file: path=/usr/share/webapps/bootstrap.zip
+        state=absent
 
 - name: set the right permission
   file: path=/usr/share/webapps/
