@@ -1,0 +1,46 @@
+# This playbook install a simple file for displaying details about the PHP
+# installation.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the 'webapps' directory
+  file: path=/usr/share/webapps/
+        owner=root
+        group=root
+        mode=0755
+        state=directory
+
+- name: create the needed directory
+  file: path=/usr/share/webapps/phpinfo
+        owner=root
+        group=root
+        mode=0755
+        state=directory
+
+- name: create a new file with lineinfile
+  lineinfile: dest=/usr/share/webapps/phpinfo/index.php
+              regexp='^'
+              line=''
+              state=present
+              create=True
+
+- name: add a multiline string to the file and delete the string from before
+  lineinfile: dest=/usr/share/webapps/phpinfo/index.php
+              regexp='^'
+              line='<?php\nphpinfo();\n?>'
+              state=present
+
+- name: set the permissions
+  file: path=/var/www/lighttpd/
+        mode=0777
+        state=directory
+
+- name: create a symlink to the webserver root
+  file: src=/usr/share/webapps/phpinfo/
+        dest=/var/www/localhost/htdocs/phpinfo
+        owner=root
+        group=root
+        state=link
