@@ -24,8 +24,9 @@
 - name: rename the source directory
   command: /bin/mv /usr/share/webapps/linfo-$linfo_version /usr/share/webapps/linfo
 
-- name: delete the source tarball
-  command: /bin/rm /usr/share/webapps/linfo-$linfo_version.tar.gz
+- name: delete the archive
+  file: path=/usr/share/webapps/linfo-$linfo_version.tar.gz
+        state=absent
 
 - name: copy the default config file
   command: /bin/cp /usr/share/webapps/linfo/sample.config.inc.php /usr/share/webapps/linfo/config.inc.php
