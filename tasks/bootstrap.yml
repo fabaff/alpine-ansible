@@ -13,7 +13,7 @@
         mode=0777
         state=directory
 
-- name: downloads the bootstrap zip archive
+- name: download the bootstrap zip archive
   get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
            dest=/usr/share/webapps/bootstrap.zip
            mode=0440
