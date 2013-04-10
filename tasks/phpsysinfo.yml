@@ -6,13 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create the 'webapps' directory
-  file: path=/usr/share/webapps/
-        owner=root
-        group=root
-        mode=0777
-        state=directory
-
 - name: download the phpsysinfo source tarball
   get_url: url=https://github.com/rk4an/phpsysinfo/archive/v$phpsysinfo_version.tar.gz
            dest=/usr/share/webapps/phpsysinfo-$phpsysinfo_version.tar.gz
