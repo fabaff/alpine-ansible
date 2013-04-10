@@ -1,0 +1,36 @@
+# This playbook install the SQLol SQL injection test-bed
+# application (https://github.com/SpiderLabs/SQLol).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# All rights reserved. Licensed under CC BY 3.0
+#
+---
+- name: downloads the archive
+  get_url: url=http://downloads.sourceforge.net/project/bwapp/bWAPPv$bwapp_version/bWAPPv$bwapp_version.zip
+           dest=/usr/share/webapps/bwapp-$bwapp_version.zip
+           mode=0440
+
+- name: unpack the archive
+  command: /usr/bin/unzip -o /usr/share/webapps/bwapp-$bwapp_version.zip -d /usr/share/webapps/
+
+- name: delete the archive
+  command: /bin/rm /usr/share/webapps/bwapp-$bwapp_version.zip
+
+- name: rename the folder
+  command: /bin/mv /usr/share/webapps/bWAPP /usr/share/webapps/bwapp
+
+- name: set the right permission
+  file: path=/usr/share/webapps/
+        mode=0777
+        state=directory
+
+- name: set the default mysql password
+  command: sed -i 's|$password = ""|$password = "$mysql_root_password"|g' /usr/share/webapps/bwapp/config.inc.php
+
+- name: create a symlink to the webserver root
+  file: src=/usr/share/webapps/bwapp/
+        dest=/var/www/localhost/htdocs/bwapp
+        owner=root
+        group=root
+        state=link
