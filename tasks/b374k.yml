@@ -1,0 +1,22 @@
+# This playbook install the b374k shell (http://code.google.com/p/b374k-shell/).
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+- name: create the directory
+  file: path=/usr/share/webapps/b374k
+        state=directory
+
+- name: download the source
+  get_url: url=http://b374k-shell.googlecode.com/files/b374k-2.2.php
+           dest=/usr/share/webapps/b374k/b374k.php
+           mode=0777
+
+- name: create a symlink to the webserver root
+  file: src=/usr/share/webapps/b374k/
+        dest=/var/www/localhost/htdocs/b374k
+        owner=root
+        group=root
+        state=link
