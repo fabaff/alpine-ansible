@@ -7,3 +7,6 @@
 ---
 - name: remove unzip package
   command: /sbin/apk del unzip
+
+- name: remove git
+  command: /sbin/apk del git

@@ -9,7 +9,8 @@
 - name: install unzip packages
   command: /sbin/apk add unzip
 
-
+- name: for the git module git is needed
+  command: /sbin/apk add git
 
 # Folder and files
 - name: create the 'webapps' directory
