@@ -6,13 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create the 'webapps' directory
-  file: path=/usr/share/webapps/
-        owner=root
-        group=root
-        mode=0777
-        state=directory
-
 - name: download the bootstrap zip archive
   get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
            dest=/usr/share/webapps/bootstrap.zip
