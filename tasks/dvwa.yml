@@ -6,16 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: install unzip packages
-  command: /sbin/apk add unzip
-
-- name: create the 'webapps' directory
-  file: path=/usr/share/webapps/
-        owner=root
-        group=root
-        mode=0777
-        state=directory
-
 - name: downloads the archive
   get_url: url=http://dvwa.googlecode.com/files/DVWA-$dvwa_version.zip
            dest=/usr/share/webapps/dvwa-$dvwa_version.zip
@@ -46,6 +36,3 @@
         owner=root
         group=root
         state=link
-
-- name: remove unzip package
-  command: /sbin/apk del unzip
