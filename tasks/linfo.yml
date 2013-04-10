@@ -6,13 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create a directory to store the data
-  file: path=/usr/share/webapps/
-        owner=root
-        group=root
-        mode=0777
-        state=directory
-
 - name: download the linfo source tarball
   get_url: url=http://sourceforge.net/projects/linfo/files/Linfo%20Stable%20Releases/linfo-$linfo_version.tar.gz
            dest=/usr/share/webapps/linfo-$linfo_version.tar.gz
