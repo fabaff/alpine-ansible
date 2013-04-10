@@ -5,14 +5,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create the 'webapps' directory
-  file: path=/usr/share/webapps/
-        owner=root
-        group=root
-        mode=0777
-        state=directory
-
-- name: download the linfo source tarball
+- name: download the source tarball
   get_url: url=http://prdownloads.sourceforge.net/phpshell/phpshell-$phpshell_version.tar.gz
            dest=/usr/share/webapps/phpshell-$phpshell_version.tar.gz
            mode=0440
