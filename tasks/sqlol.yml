@@ -6,13 +6,6 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-- name: create the 'webapps' directory
-  file: path=/usr/share/webapps/
-        owner=root
-        group=root
-        mode=0777
-        state=directory
-
 - name: for the git module git is needed
   command: /sbin/apk add git
 
