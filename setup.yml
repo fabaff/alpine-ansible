@@ -12,7 +12,7 @@
   user: root
   vars_files:
     - variables/application-versions.yml
-    - variables/sensitive-variables.yml
+    - variables/sensitive.yml
 
   tasks:
 #    - include: tasks/apk-repositories.yml
