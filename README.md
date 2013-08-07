@@ -14,8 +14,8 @@ If you have just found Ansible or Alpine Linux, you should start here:
 
 ## Prerequisites
 
-The [Documentation](http://wiki.alpinelinux.org/wiki/User:Fab/Ansible) helps
-you to get started but is very incomplete.
+The [Documentation](http://wiki.alpinelinux.org/wiki/Ansible) helps
+you to get started.
 
 ## Structure
 
