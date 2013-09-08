@@ -10,7 +10,7 @@
   user: root
 
   vars:
-    release_version: 3.1.2
+    release_version: 4.0.6
 
   tasks:
   - name: create the 'webapps' directory
