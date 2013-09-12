@@ -11,3 +11,6 @@
 ---
 - name: reboot system
   command: /sbin/reboot
+
+- name: halt system
+  command: /sbin/halt
