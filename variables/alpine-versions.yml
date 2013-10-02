@@ -1,0 +1,11 @@
+# This variables files contains the version numbers of Alpine Linux.
+#
+# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+#
+# Licensed under CC BY 3.0. All rights reserved.
+#
+---
+# Alpine Linux - http://alpinelinux.org/
+alpine_previous: 2.6.3
+alpine_current: 2.6.4
+alpine_next: 2.6.5
