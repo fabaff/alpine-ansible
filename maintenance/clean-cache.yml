@@ -1,6 +1,6 @@
 # This playbook clean the package cache of Alpine Linux hosts.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2014 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -11,4 +11,3 @@
   tasks:
   - name: clean package cache
     command: /sbin/apk cache clean
-
