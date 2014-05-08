@@ -6,6 +6,6 @@
 #
 ---
 # Alpine Linux - http://alpinelinux.org/
-alpine_previous: 2.7.4
-alpine_current: 2.7.5
-alpine_next: 2.7.6
+alpine_previous: 2.7.6
+alpine_current: 2.7.7
+alpine_next: 2.7.8
