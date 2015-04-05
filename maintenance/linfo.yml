@@ -21,18 +21,18 @@
           state=directory
 
   - name: download the linfo source tarball
-    get_url: url=http://sourceforge.net/projects/linfo/files/Linfo%20Stable%20Releases/linfo-$release_version.tar.gz
-             dest=/usr/share/webapps/linfo-$release_version.tar.gz
+    get_url: url=http://sourceforge.net/projects/linfo/files/Linfo%20Stable%20Releases/linfo-{{ release_version }}.tar.gz
+             dest=/usr/share/webapps/linfo-{{ release_version }}.tar.gz
              mode=0440
 
   - name: unpack the source tarball
-    command: /bin/tar -xzf /usr/share/webapps/linfo-$release_version.tar.gz -C /usr/share/webapps/
+    command: /bin/tar -xzf /usr/share/webapps/linfo-{{ release_version }}.tar.gz -C /usr/share/webapps/
 
   - name: rename the source directory
-    command: /bin/mv /usr/share/webapps/linfo-$release_version /usr/share/webapps/linfo
+    command: /bin/mv /usr/share/webapps/linfo-{{ release_version }} /usr/share/webapps/linfo
 
   - name: delete the source tarball
-    command: /bin/rm /usr/share/webapps/linfo-$release_version.tar.gz
+    command: /bin/rm /usr/share/webapps/linfo-{{ release_version }}.tar.gz
 
   - name: copy the default config file
     command: /bin/cp /usr/share/webapps/linfo/sample.config.inc.php /usr/share/webapps/linfo/config.inc.php
