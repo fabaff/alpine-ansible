@@ -1,6 +1,6 @@
 # This playbook install the lighttpd with FastCGI and PHP support.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -14,7 +14,7 @@
     command: /sbin/apk add lighttpd
 
   - name: install php packages
-    command: /sbin/apk add $item 
+    command: /sbin/apk add {{ item }} 
     with_items:
       - php-common
       - php-iconv
