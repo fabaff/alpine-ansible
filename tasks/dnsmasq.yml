@@ -1,7 +1,7 @@
 # This playbook install the dnsmasq (http://www.thekelleys.org.uk/dnsmasq/doc.html)
 # DNS forwarder and DHCP server.
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved. Licensed under CC BY 3.0
 #
