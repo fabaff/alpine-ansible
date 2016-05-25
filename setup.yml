@@ -1,7 +1,7 @@
 # This playbook contains example tasks to perform on a fresh Alpine Linux 
 # installation. 
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2016 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # All rights reserved. Licensed under CC BY 3.0
 #
@@ -15,8 +15,8 @@
     - variables/sensitive.yml
 
   tasks:
-#    - include: tasks/apk-repositories.yml
-#    - include: tasks/motd.yml
+    - include: tasks/apk-repositories.yml
+    - include: tasks/motd.yml
 
 # Server tasks
 #    - include: tasks/lighttpd.yml
@@ -29,7 +29,7 @@
 #    - include: tasks/linfo.yml
 #    - include: tasks/bootstrap.yml
 #    - include: tasks/phpsysinfo.yml
-    - include: tasks/mutillidae.yml
+#    - include: tasks/mutillidae.yml
 #    - include: tasks/php-shell-detector.yml
 #    - include: tasks/dvwa.yml
 #    - include: tasks/phpmyadmin.yml
