@@ -6,8 +6,8 @@
 #
 ---
 # Alpine Linux - http://alpinelinux.org/
-alpine_release: 3.3.1
+alpine_release: 3.5.2
 #
-alpine_previous: 3.3.0
-alpine_current: 3.3.1
-alpine_next: 3.3.2
+alpine_previous: 3.5.1
+alpine_current: 3.5.2
+alpine_next: 3.5.3
