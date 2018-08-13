@@ -1,6 +1,6 @@
 # This playbook install all needed components for the setup. 
 #
-# Copyright (c) 2013 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -14,8 +14,10 @@
 
 # Folder and files
 - name: create the 'webapps' directory
-  file: path=/usr/share/webapps/
-        owner=root
-        group=root
-        mode=0777
-        state=directory
+  file:
+    path: /usr/share/webapps/
+    owner: root
+    group: root
+    mode: 0777
+    state: directory
+
