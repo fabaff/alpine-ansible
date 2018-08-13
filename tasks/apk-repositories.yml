@@ -1,14 +1,16 @@
 # This playbook copy a default repositories file. 
 #
-# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2018 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: put a default repositories file in place
-  template: src=files/repositories.j2
-            dest=/etc/apk/repositories
-            owner=root
-            group=root
-            mode=0644
-            backup=yes
+  template:
+    src: files/repositories.j2
+    dest: /etc/apk/repositories
+    owner: root
+    group: root
+    mode: 0644
+    backup: yes
+
