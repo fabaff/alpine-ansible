@@ -1,39 +1,44 @@
 # This playbook install the bootstrap (http://twitter.github.com/bootstrap/)
 # javascript framework.
 #
-# Copyright (c) 2013-2017 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2020 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 - name: download the bootstrap zip archive
-  get_url: url=http://twitter.github.com/bootstrap/assets/bootstrap.zip
-           dest=/usr/share/webapps/bootstrap.zip
-           mode=0440
+  get_url:
+    url: http://twitter.github.com/bootstrap/assets/bootstrap.zip
+    dest: /usr/share/webapps/bootstrap.zip
+    mode: 0440
 
 - name: unpack the archive
   command: /usr/bin/unzip -o /usr/share/webapps/bootstrap.zip -d /usr/share/webapps/
 
 - name: delete the archive
-  file: path=/usr/share/webapps/bootstrap.zip
-        state=absent
+  file:
+    path: /usr/share/webapps/bootstrap.zip
+    state: absent
 
 - name: set the right permission
-  file: path=/usr/share/webapps/
-        mode=0777
-        state=directory
+  file:
+    path: /usr/share/webapps/
+    mode: 0777
+    state: directory
 
 - name: create a symlink to the webserver's root
-  file: src=/usr/share/webapps/bootstrap/
-        dest=/var/www/localhost/htdocs/bootstrap
-        owner=root
-        group=root
-        state=link
+  file:
+    src: /usr/share/webapps/bootstrap/
+    dest: /var/www/localhost/htdocs/bootstrap
+    owner: root
+    group: root
+    state: link
 
 - name: install a default index.html file
-  template: src=files/bootstrap.j2
-            dest=/var/www/localhost/htdocs/index.html 
-            owner=root
-            group=root
-            mode=0755
-            backup=yes
+  template:
+    src: files/bootstrap.j2
+    dest: /var/www/localhost/htdocs/index.html 
+    owner: root
+    group: root
+    mode: 0755
+    backup: yes
