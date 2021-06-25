@@ -1,7 +1,7 @@
 # This variables files contains the version numbers of the software packages
 # which will be installed without the package management tool.
 #
-# Copyright (c) 2013-2020 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2021 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
@@ -24,8 +24,8 @@ mutillidae_version: 2.6.43
 # Damn Vulnerable Web App (DVWA) - http://www.dvwa.co.uk/
 dvwa_version: 1.9
 
-# phpMyAdmin- http://www.phpmyadmin.net/
-phpmyadmin_version: 5.0.2
+# phpMyAdmin - http://www.phpmyadmin.net/
+phpmyadmin_version: 5.1.1
 
 # bWAPP - http://sourceforge.net/projects/bwapp/
 bwapp_version: 2.0
