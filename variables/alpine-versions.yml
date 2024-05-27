@@ -1,13 +1,13 @@
 # This variables files contains the version numbers of Alpine Linux.
 #
-# Copyright (c) 2013-2023 Fabian Affolter <fabian@affolter-engineering.ch>
+# Copyright (c) 2013-2024 Fabian Affolter <fabian@affolter-engineering.ch>
 #
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
 # Alpine Linux - http://alpinelinux.org/
-alpine_release: 3.18.4
+alpine_release: 3.20.0
 #
-alpine_previous: 3.18.3
-alpine_current: 3.18.4
-alpine_next: 3.18.5
+alpine_previous: 3.19.0
+alpine_current: 3.20.0
+alpine_next: 3.20.1
