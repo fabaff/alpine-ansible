@@ -5,7 +5,7 @@
 # Licensed under CC BY 3.0. All rights reserved.
 #
 ---
-# Alpine Linux - http://alpinelinux.org/
+# Alpine Linux - https://alpinelinux.org/
 alpine_release: 3.21.0
 #
 alpine_previous: 3.20.3
