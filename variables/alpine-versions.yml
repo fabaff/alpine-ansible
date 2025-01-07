@@ -10,4 +10,4 @@ alpine_release: 3.21.1
 #
 alpine_previous: 3.20.4
 alpine_current: 3.21.0
-alpine_next: 3.21.1
+alpine_next: 3.21.2
